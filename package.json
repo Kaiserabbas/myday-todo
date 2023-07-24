@@ -4,7 +4,8 @@
   "description": "<h2><b>To-Do List Project</b></h2> The To-Do List Application is a simple web-based task management tool that allows users to create, view, edit, and delete tasks. This application is designed to help individuals organize their tasks and keep track of their daily activities. This is a simple web application that allows you to manage your to-do list. You can add, edit, and remove tasks as needed. The application is built using HTML, CSS, and JavaScript.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production"
   },
   "keywords": [],
   "author": "",
@@ -15,9 +16,13 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.27.5",
     "hint": "^7.1.10",
+    "html-webpack-plugin": "^5.5.3",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",
     "stylelint-csstree-validator": "^1.9.0",
-    "stylelint-scss": "^3.21.0"
+    "stylelint-scss": "^3.21.0",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
   }
 }
