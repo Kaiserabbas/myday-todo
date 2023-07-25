@@ -5,11 +5,11 @@ module.exports = {
   entry: {
     index: './src/index.js',
     print: './src/modules/elements.js',
-    style: './src/modules/index.css',
+    style: './src/modules/style.css',
   },
   mode: 'none',
   devServer: {
-    contentBase: './dist',
+    static: './dist',
     open: true,
   },
   plugins: [
@@ -22,6 +22,7 @@ module.exports = {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
+    publicPath: '/',
   },
   optimization: {
     runtimeChunk: 'single',
