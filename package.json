@@ -4,7 +4,7 @@
   "description": "<h2><b>To-Do List Project</b></h2> The To-Do List Application is a simple web-based task management tool that allows users to create, view, edit, and delete tasks. This application is designed to help individuals organize their tasks and keep track of their daily activities. This is a simple web application that allows you to manage your to-do list. You can add, edit, and remove tasks as needed. The application is built using HTML, CSS, and JavaScript.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --coverage",
     "watch": "webpack --watch",
     "start": "webpack serve --open",
     "server": "node server.js",
