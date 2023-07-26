@@ -69,8 +69,9 @@ const renderTaskList = () => {
   taskListDiv.innerHTML = '';
   tasks.forEach((task, index) => {
     const taskDiv = renderTask(task, index);
-
+    const hr = document.createElement('hr');
     taskListDiv.appendChild(taskDiv);
+    taskListDiv.appendChild(hr);
   });
 };
 // Function to add a new task
@@ -154,6 +155,26 @@ document
 document
   .getElementById('clearCompletedBtn')
   .addEventListener('click', clearCompletedTasks);
+
+// Function to mark all tasks as completed
+const selectAllButton = document.getElementById('selectAllBtn');
+const toggleSelectAllTasks = () => {
+  const areAllTasksCompleted = tasks.every((task) => task.status);
+
+  if (areAllTasksCompleted) {
+    tasks.forEach((task) => (task.status = false));
+    selectAllButton.textContent = 'Select All';
+  } else {
+    tasks.forEach((task) => (task.status = true));
+    selectAllButton.textContent = 'Select None';
+  }
+
+  updateLocalStorage();
+  renderTaskList();
+};
+
+// Event listener for "Select All" button
+selectAllButton.addEventListener('click', toggleSelectAllTasks);
 
 // Initial render of the task list
 renderTaskList();
