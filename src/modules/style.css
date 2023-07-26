@@ -1,40 +1,78 @@
-.completed {
-    text-decoration: line-through;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-#input-form {
+#app {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
     border: none;
-    width: 100vw;
-    height: 50px;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-.tasks-div {
+button:hover {
+    background-color: #0056b3;
+}
+
+#taskList {
+    margin-top: 20px;
+}
+
+.task {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 20px 0 20px;
+    margin-bottom: 10px;
 }
 
-.close {
-    font-size: 20px;
-    display: none;
+.task input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.task button {
+    margin-left: auto;
+    font-size: 18px;
+    padding: 6px 10px;
+    border: none;
+    background-color: transparent;
     cursor: pointer;
 }
 
 .handle {
-    font-size: 25px;
-    color: rgb(138, 136, 136);
-    margin: 0 20px 0 0;
-    cursor: pointer;
+        margin-left: auto;
+            font-size: 18px;
+            padding: 6px 10px;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
 }
 
-.form-input-button {
-    display: none;
-}
-
-.clear-button {
-    margin: 0;
-    border: none;
-    width: 100vw;
-    height: 60px;
+.task button:hover {
+    color: #ff0000;
 }

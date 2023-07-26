@@ -3,13 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./modules/style.css" />
-    <title>My Day Todo</title>
+    <link rel="stylesheet" href="index.css" />
+    <title>Todo List</title>
   </head>
   <body>
-    <div id="todo-list"></div>
-    <script src="../dist/index.bundle.js"></script>
-    <script src="../dist/print.bundle.js"></script>
-    <script src="../dist/runtime.bundle.js"></script>
+    <div id="app">
+      <h1>Todo List</h1>
+      <input type="text" id="newTaskInput" placeholder="Add a new task..." />
+      <div id="taskList"></div>
+      <button id="clearCompletedBtn">Clear All Completed</button>
+    </div>
+    <!-- <script src="modules/renderList.js"></script>
+    <script src="modules/addList.js"></script>
+    <script src="modules/addRemove.js"></script>
+    <script src="modules/completeTask.js"></script>
+    <script src="modules/deleteItem.js"></script>
+    <script src="modules/editList.js"></script>
+    <script src="modules/localStorage.js"></script>
+    <script src="modules/dragDropLists.js"></script>
+    <script src="index.js"></script> -->
   </body>
 </html>
