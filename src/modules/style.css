@@ -10,7 +10,8 @@ body {
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;}
+  box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
+}
 
 h1 {
   text-align: center;
@@ -74,5 +75,5 @@ button:hover {
 }
 
 .task button:hover {
-    color: #ff0000;
+  color: #f00;
 }
