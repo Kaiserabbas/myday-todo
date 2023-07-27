@@ -98,21 +98,6 @@ const addTask = (description) => {
   renderTaskList();
 };
 
-// Function to remove a task
-const removeTask = (index) => {
-  if (index >= 0 && index < tasks.length) {
-    tasks.splice(index, 1);
-
-    // Update the indices of the remaining tasks after deletion
-    tasks.forEach((task, i) => {
-      task.index = i;
-    });
-
-    updateLocalStorage();
-    renderTaskList();
-  }
-};
-
 // Function to mark a task as completed
 const completeTask = (index) => {
   if (index >= 0 && index < tasks.length) {
