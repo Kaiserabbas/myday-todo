@@ -67,9 +67,18 @@ const renderTask = (task, index) => {
 const renderTaskList = () => {
   const taskListDiv = document.getElementById('taskList');
   taskListDiv.innerHTML = '';
+
+  // Variable to toggle the background color
+  let isGrayBackground = false;
+
   tasks.forEach((task, index) => {
     const taskDiv = renderTask(task, index);
     const hr = document.createElement('hr');
+
+    // Apply the background color based on the isGrayBackground flag
+    taskDiv.style.backgroundColor = isGrayBackground ? '#f2f2f2' : 'white';
+    isGrayBackground = !isGrayBackground;
+
     taskListDiv.appendChild(taskDiv);
     taskListDiv.appendChild(hr);
   });
