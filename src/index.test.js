@@ -1,4 +1,8 @@
-// test.js
+import { setItem, getItem, clear, removeItem } from './__mocks__/localStorage';
+import {
+  localStorageGetTasks,
+  localStorageSetTasks,
+} from './modules/localStorage';
 
 // Import the functions to be tested
 import { deleteCheckedTask, addTask, clearCompletedTasks } from './index.js'; // Update the path to the module containing your functions
@@ -33,22 +37,55 @@ afterEach(() => {
 
 // Tests for deleteCheckedTask function
 describe('deleteCheckedTask', () => {
-  // ...
+  test('should delete the checked task from the tasks array', () => {
+    // Arrange
+    global.tasks = [
+      { description: 'Task 1', status: false },
+      { description: 'Task 2', status: true },
+      { description: 'Task 3', status: true },
+    ];
+
+    // Act
+    deleteCheckedTask(1); // Delete the second task
+
+    // Assert
+    expect(global.tasks).toEqual([
+      { description: 'Task 1', status: false },
+      { description: 'Task 3', status: true },
+    ]);
+  });
+
+  // Add more test cases for edge cases and other scenarios
 });
 
 // Tests for clearCompletedTasks function
 describe('clearCompletedTasks', () => {
-  // ...
+  test('should clear all completed tasks from the tasks array', () => {
+    // Arrange
+    global.tasks = [
+      { description: 'Task 1', status: false },
+      { description: 'Task 2', status: true },
+      { description: 'Task 3', status: true },
+    ];
+
+    // Act
+    clearCompletedTasks();
+
+    // Assert
+    expect(global.tasks).toEqual([{ description: 'Task 1', status: false }]);
+  });
+
+  // Add more test cases for edge cases and other scenarios
 });
 
 // Tests for addTask function
 describe('addTask', () => {
-  test('should add a new task to tasks array', () => {
+  test('should add a new task to the tasks array', () => {
     // Arrange
     global.tasks = [];
 
     // Act
-    addTask('New Task', global.tasks);
+    addTask('New Task');
 
     // Assert
     expect(global.tasks.length).toBe(1);

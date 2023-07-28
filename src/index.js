@@ -18,6 +18,13 @@ const clearCompletedTasks = () => {
   renderTaskList();
 };
 
+const updateTaskOrder = () => {
+  tasks.forEach((task, index) => {
+    task.index = index;
+  });
+  updateLocalStorage();
+};
+
 // Function to render a single task
 const renderTask = (task, index) => {
   const taskDiv = document.createElement('div');
@@ -63,7 +70,6 @@ const renderTask = (task, index) => {
   return taskDiv;
 };
 
-// Render the task list
 const renderTaskList = () => {
   const taskListDiv = document.getElementById('taskList');
   taskListDiv.innerHTML = '';
@@ -73,6 +79,34 @@ const renderTaskList = () => {
 
   tasks.forEach((task, index) => {
     const taskDiv = renderTask(task, index);
+    // Add draggable attribute to the taskDiv
+    taskDiv.setAttribute('draggable', true);
+
+    // Add dragstart event listener to store the index of the dragged task
+    taskDiv.addEventListener('dragstart', (event) => {
+      event.dataTransfer.setData('text/plain', index.toString());
+    });
+
+    // Add dragover event listener to allow dropping on the task
+    taskDiv.addEventListener('dragover', (event) => {
+      event.preventDefault();
+    });
+
+    // Add drop event listener to handle the drop
+    taskDiv.addEventListener('drop', (event) => {
+      event.preventDefault();
+      const fromIndex = parseInt(event.dataTransfer.getData('text'));
+      const toIndex = index;
+
+      // Reorder the tasks array
+      const [draggedTask] = tasks.splice(fromIndex, 1);
+      tasks.splice(toIndex, 0, draggedTask);
+
+      // Update the task order in local storage and re-render the task list
+      updateTaskOrder();
+      renderTaskList();
+    });
+
     const hr = document.createElement('hr');
 
     // Apply the background color based on the isGrayBackground flag
@@ -83,6 +117,7 @@ const renderTaskList = () => {
     taskListDiv.appendChild(hr);
   });
 };
+
 // Function to add a new task
 const addTask = (description) => {
   const newTask = {
