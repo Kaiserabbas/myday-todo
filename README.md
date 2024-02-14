@@ -23,8 +23,7 @@ Task Search: The application allows users to search for specific tasks based on 
 ## Installation
 
 Clone the repository:
-
-```shell
+shell
 git clone https://github.com/Kaiserabbas/to-do-list.git
 
 ## 🛠 Built With
@@ -78,4 +77,4 @@ I would like to thank and appreciate Microverse for arranging challanges for us 
 
 This project is licensed under the MIT License, which means you are free to use, modify, and distribute the code for personal and commercial purposes. See the LICENSE file for more details.
 
-```
+
